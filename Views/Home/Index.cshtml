@@ -1,0 +1,44 @@
+﻿@model FirstResponsiveWebAppKingslee.Models.FirstResponsiveWebApp 
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content=" width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/custom.css" />
+
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/popper.js/popper.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>   
+    <h1>My First Responsive Web App</h1>
+    <form asp-action="Index" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Name">User Name:</label>
+            <input asp-for="Name" />
+        </div>
+        <div>
+            <label asp-for="BirthYear">Year Of Birth:</label>
+            <input asp-for="BirthYear" />
+        </div>
+        <div>
+            <label>Age as of Year end:</label>
+            <input value=" @ViewBag.FRE" readonly />
+        </div>
+        <div>
+            <label>Age as of Today:</label>
+            <input value=" @ViewBag.FR" readonly />
+        </div>
+        <button type="submit">Submit</button>
+        <a asp-action="Index">Clear</a>
+    </form>
+</body>
+</html>
